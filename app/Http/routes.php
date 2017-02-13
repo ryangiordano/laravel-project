@@ -12,19 +12,11 @@
 */
 
 
-Route::get('/',[
-  'uses'=>'NiceActionController@getHome',
-  'as'=> 'home'
-]);
-Route::group(['prefix'=>'do'],function(){
-  //arrow syntax gives the route a name
+Route::get('/{author?}',['uses'=>'QuoteController@getIndex','as'=>'index']);
 
-  Route::get('/{action}/{name?}', [
-    'uses'=> 'NiceActionController@getNiceAction',
-    'as'=> 'niceaction'
-    ]);
-  Route::post('/add_action', [
-    'uses'=>'NiceActionController@postInsertNiceAction',
-    'as'=>'add_action'
-  ]);
-});
+Route::post('/new', ['uses'=>'QuoteController@postQuote', 'as'=>'create']);
+
+Route::get('/delete/{quote_id}', ['uses'=>'QuoteController@getDeleteQuote', 'as'=>'delete']);
+// Route::group(['prefix'=>'do'],function(){
+//
+// });

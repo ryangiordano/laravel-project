@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNiceActionsTable extends Migration
+class CreateQuoteLogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,10 @@ class CreateNiceActionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('nice_actions', function (Blueprint $table) {
+        Schema::create('quote_log', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('name');
-            $table->integer('niceness');
+            $table->string('author');
         });
     }
 
@@ -27,6 +26,6 @@ class CreateNiceActionsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('nice_actions');
+        Schema::drop('quote_log');
     }
 }

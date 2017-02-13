@@ -1,0 +1,19 @@
+.delete{
+  position:absolute;
+  top:10px;
+  right:30px;
+}
+.delete a:hover{
+  text-decoration:none;
+  color:inherit;
+
+}
+.delete a{
+  color:#646464;
+}
+.panel-default{
+  background-color:rgb(238, 214, 151);
+}
+.panel-default{
+  background-color:rgb(255, 243, 230);
+}
